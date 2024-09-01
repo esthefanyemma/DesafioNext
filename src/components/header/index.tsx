@@ -13,8 +13,11 @@ const links = [
 
 export default function Header() {
     return (
-        <header className=" content-center top-0 z-20 mx-auto w-full h-hug md:p-0 mb-8">
-            <div className="bg-roxo-medio lg:flex hidden flex-row gap-2 py-10 px-20 justify-between items-center w-full">
+        <header className=" content-center top-0 z-20 mx-auto w-full h-fit md:p-0 mb-8">
+
+            {/* COMPUTADOR  */}
+
+            <div className="bg-gradient-to-b from-roxo-medio to-roxo-escuro lg:flex hidden flex-row gap-2 py-10 px-20 justify-between items-center w-full">
                 <Link href="/" className="flex gap-2 items-center">
                     <div className="flex items-center gap-2">
                         <Image
@@ -51,7 +54,7 @@ export default function Header() {
                         NAVEGAR
                     </Link>
                 </div>
-                <div className="text-white flex flex-row gap-4">
+                <div className="text-white flex flex-row gap-4 pl-8">
                     <Link href="/">
                         <User className="w-8 h-8 hover:drop-shadow-[0_0_15px_#be78ff]"></User>
                     </Link>
@@ -64,8 +67,10 @@ export default function Header() {
                 </div>
             </div>
 
-            <div className="lg:hidden flex flex-col gap-4 justify-between items-center w-full">
-                <div className="bg-roxo-medio flex py-4 px-8 flex-row justify-between w-full items-center">
+            {/* CELULAR */}
+
+            <div className="lg:hidden flex flex-col gap-2 justify-between items-center w-full pb-8">
+                <div className="bg-gradient-to-b from-roxo-medio to-roxo-escuro flex py-4 px-4 flex-row justify-between w-full items-center">
                     <Link href="/" className="flex gap-2 items-center">
                         <div className="flex items-center gap-2">
                             <Image
@@ -73,17 +78,17 @@ export default function Header() {
                                 alt="Logo do site"
                                 width={500}
                                 height={500}
-                                className="w-20"
+                                className="w-14"
                             />
                             <span className="text-white md:block text-3xl">|</span>
                             <span
-                                className={`md:text3xl text-4xl text-white md:block font-anton`}
+                                className={`md:text3xl text-xl text-white md:block font-anton`}
                             >
                                 STORE
                             </span>
                         </div>
                     </Link>
-                    <Menu className="text-white h-12 w-12"></Menu>
+                    <Menu className="text-white h-8 w-8"></Menu>
                 </div>
 
                 <div className="flex flex-row justify-between w-full items-center gap-6 px-4">
@@ -92,7 +97,7 @@ export default function Header() {
                     </div>
                     <Link
                         href="/"
-                        className="md:text-3xl text-2xl text-roxo-claro hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio"
+                        className="md:text-3xl bg-roxo-medio rounded-lg p-2 text-lg text-white hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio"
                     >
                         NAVEGAR
                     </Link>

@@ -32,6 +32,9 @@ const config: Config = {
         anton: ['Anton', 'sans-serif'],
         antonio: ['Antonio', 'sans-serif'],
         anybody: ['Anybody', 'sans-serif']
+      },
+      dropShadow: {
+        'roxinho': '0 0 30px rgba(189,120,255,1)'
       }
     },
   },

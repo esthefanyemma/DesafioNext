@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header";
 import Search from "@/components/search";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Desafio Next.JS 2024.2",
@@ -15,9 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className= "bg-roxo-escuro">{children}
+      <body className= "bg-roxo-escuro">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
