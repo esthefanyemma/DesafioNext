@@ -34,7 +34,8 @@ const config: Config = {
         anybody: ['Anybody', 'sans-serif']
       },
       dropShadow: {
-        'roxinho': '0 0 30px rgba(189,120,255,1)'
+        'roxinho': '0 0 30px rgba(189,120,255,1)',
+        'roxinho2': '0 0 30px rgba(189,120,255,0.3)'
       }
     },
   },

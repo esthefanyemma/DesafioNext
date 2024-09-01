@@ -41,7 +41,7 @@ export default function Carrossel({ gamescel, cor, classname }: CarrosselProp) {
                         slidesPerView: 3,
                     },
                 }}
-                className="w-full"
+                className="w-full drop-shadow-roxinho2"
             >
                 {gamescel.map((game, index) => (
                     <SwiperSlide key={index}>

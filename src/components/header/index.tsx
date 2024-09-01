@@ -13,7 +13,7 @@ const links = [
 
 export default function Header() {
     return (
-        <header className=" content-center top-0 z-20 mx-auto w-full h-fit md:p-0 mb-8">
+        <header className=" content-center top-0 z-20 mx-auto w-full h-fit md:p-0 mb-20">
 
             {/* COMPUTADOR  */}
 
@@ -25,7 +25,7 @@ export default function Header() {
                             alt="Logo do site"
                             width={500}
                             height={500}
-                            className="w-20"
+                            className="w-24"
                         />
                         <span className="text-white hidden md:block text-3xl">|</span>
                         <span
@@ -36,33 +36,37 @@ export default function Header() {
                     </div>
                 </Link>
 
-                <div className="flex-1 flex justify-center mx-8">
-                    <Search />
-                </div>
+                <div className="flex flex-row w-full px-32 items-center">
 
-                <div className="flex flex-row gap-x-20 content-center md:gap-x-8">
-                    <Link
-                        href="/"
-                        className="md:text-3xl text-2xl text-roxo-claro hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio"
-                    >
-                        CATEGORIAS
-                    </Link>
-                    <Link
-                        href="/"
-                        className="md:text-3xl text-2xl text-roxo-claro hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio"
-                    >
-                        NAVEGAR
-                    </Link>
+                    <div className="flex-1 flex justify-center mx-8">
+                        <Search />
+                    </div>
+
+                    <div className="flex flex-row gap-x-20 content-center md:gap-x-8">
+                        <Link
+                            href="/"
+                            className="md:text-3xl text-2xl text-roxo-claro hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio"
+                        >
+                            CATEGORIAS
+                        </Link>
+                        <Link
+                            href="/navegar"
+                            className="md:text-3xl text-2xl text-roxo-claro hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio"
+                        >
+                            NAVEGAR
+                        </Link>
+                    </div>
+
                 </div>
                 <div className="text-white flex flex-row gap-4 pl-8">
                     <Link href="/">
-                        <User className="w-8 h-8 hover:drop-shadow-[0_0_15px_#be78ff]"></User>
+                        <User className="w-10 h-10 hover:drop-shadow-[0_0_15px_#be78ff]"></User>
                     </Link>
                     <Link href="/">
-                        <Phone className="w-8 h-8 hover:drop-shadow-[0_0_15px_#be78ff]"></Phone>
+                        <Phone className="w-10 h-10 hover:drop-shadow-[0_0_15px_#be78ff]"></Phone>
                     </Link>
                     <Link href="/">
-                        <CirclePlus className="w-8 h-8 hover:drop-shadow-[0_0_15px_#be78ff]"></CirclePlus>
+                        <CirclePlus className="w-10 h-10 hover:drop-shadow-[0_0_15px_#be78ff]"></CirclePlus>
                     </Link>
                 </div>
             </div>
