@@ -18,7 +18,7 @@ export default function Card({game} : CardProp) {
                 height={500}
                 className="w-32 h-36 md:w-48 md:h-56 lg:w-64 lg:h-72 xl:w-80 xl:h-96 rounded-t-3xl"
             />
-            <h1 className="text-white text-center text-base p-2 xl:text-3xl">{game.name}</h1>
+            <h1 className="text-white font-antonio text-center text-base p-2 xl:text-3xl">{game.name}</h1>
         </div>
     );
 }

@@ -65,7 +65,7 @@ export default function Header() {
                     <Link href="/">
                         <Phone className="w-10 h-10 hover:drop-shadow-[0_0_15px_#be78ff]"></Phone>
                     </Link>
-                    <Link href="/">
+                    <Link href="/gerenciamento">
                         <CirclePlus className="w-10 h-10 hover:drop-shadow-[0_0_15px_#be78ff]"></CirclePlus>
                     </Link>
                 </div>
