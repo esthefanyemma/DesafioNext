@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Search from "@/components/search";
-import { CirclePlus, Menu, Phone, User } from "lucide-react";
+import { CirclePlus, Menu, Phone, User, X } from "lucide-react";
 
 const links = [
     { href: "/posts", label: "Publicações" },
@@ -98,15 +98,35 @@ export default function Header() {
                             </span>
                         </div>
                     </Link>
-                    <Menu className="text-white h-8 w-8" onClick={MenuHam}></Menu>
+                    <button onClick={MenuHam} className="text-white">
+                        {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+                    </button>
                 </div>
+
+                {isOpen && (
+                    <div className="bg-roxo-escuro w-full flex flex-col gap-4 pt-4 pb-20 px-8">
+                        <Link href="/" className="text-lg text-white font-antonio bg-roxo-escuro p-3 rounded-md drop-shadow-roxinho2">
+                            CATEGORIAS
+                        </Link>
+                        <Link href="/login" className="text-lg text-white font-antonio bg-roxo-escuro p-3 rounded-md drop-shadow-roxinho2">
+                            LOGAR
+                        </Link>
+                        <Link href="/contato" className="text-lg text-white font-antonio bg-roxo-escuro p-3 rounded-md drop-shadow-roxinho2">
+                            CONTATO
+                        </Link>
+                        <Link href="/gerenciamento" className="text-lg text-white font-antonio bg-roxo-escuro p-3 rounded-md drop-shadow-roxinho2">
+                            GERENCIAMENTO
+                        </Link>
+                        
+                    </div>
+                )}
 
                 <div className="flex flex-row justify-between w-full items-center gap-6 px-4">
                     <div className="flex-1 flex justify-center ">
                         <Search />
                     </div>
                     <Link
-                        href="/"
+                        href="/navegar"
                         className="md:text-3xl bg-roxo-medio rounded-lg p-2 text-lg text-white hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio"
                     >
                         NAVEGAR
