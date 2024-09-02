@@ -9,7 +9,7 @@ type GratisProp = {
 export default function Gratis({ gamescel }: GratisProp) {
     return (
         <div>
-            <div className="flex flex-col gap-6 bg-roxo-medio p-6">
+            <div className="flex flex-col gap-6 bg-roxo-medio p-6 pt-12">
                 <h1 className="text-white text-xl font-anton text-center drop-shadow-roxinho md:text-5xl">
                     JOGOS GRÁTIS
                 </h1>

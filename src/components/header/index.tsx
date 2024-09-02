@@ -59,10 +59,10 @@ export default function Header() {
 
                 </div>
                 <div className="text-white flex flex-row gap-4 pl-8">
-                    <Link href="/">
+                    <Link href="/login">
                         <User className="w-10 h-10 hover:drop-shadow-[0_0_15px_#be78ff]"></User>
                     </Link>
-                    <Link href="/">
+                    <Link href="/contato">
                         <Phone className="w-10 h-10 hover:drop-shadow-[0_0_15px_#be78ff]"></Phone>
                     </Link>
                     <Link href="/gerenciamento">

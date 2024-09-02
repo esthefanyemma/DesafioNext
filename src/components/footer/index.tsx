@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return(
-        <footer className="bg-gradient-to-t from-roxo-medio to-roxo-escuro w-full h-fit pt-32 pb-32">
+        <footer className="bg-gradient-to-t from-roxo-medio to-roxo-escuro w-full h-fit pt-56 pb-32">
             <div className="flex flex-col px-2 py-8 gap-8 lg:flex-row lg:items-center lg:px-32">
                 <div className="flex flex-col items-center lg:w-1/3">
                     <Image 

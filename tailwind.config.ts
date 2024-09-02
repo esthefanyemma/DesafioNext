@@ -35,7 +35,7 @@ const config: Config = {
       },
       dropShadow: {
         'roxinho': '0 0 30px rgba(189,120,255,1)',
-        'roxinho2': '0 0 30px rgba(189,120,255,0.3)'
+        'roxinho2': '0 0 10px rgba(189,120,255,0.3)'
       }
     },
   },
