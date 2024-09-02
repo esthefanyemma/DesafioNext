@@ -12,6 +12,12 @@ const links = [
 ];
 
 export default function Header() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const MenuHam = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <header className=" content-center top-0 z-20 mx-auto w-full h-fit md:p-0 mb-20">
 
@@ -92,7 +98,7 @@ export default function Header() {
                             </span>
                         </div>
                     </Link>
-                    <Menu className="text-white h-8 w-8"></Menu>
+                    <Menu className="text-white h-8 w-8" onClick={MenuHam}></Menu>
                 </div>
 
                 <div className="flex flex-row justify-between w-full items-center gap-6 px-4">

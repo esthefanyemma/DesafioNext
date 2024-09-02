@@ -1,6 +1,6 @@
 'use client'
 import getApi from "@/api/get-secao";
-import Card from "@/components/secaoapi/card";
+import Card from "@/components/home/secaoapi/card";
 import { useEffect, useState } from "react";
 
 type ApiProps = {

@@ -4,9 +4,9 @@ import HeroSection from "@/components/home/herosection";
 import Image from "next/image";
 import { gamescel } from "@/data/gamesData";
 import getApi from "@/api/get-secao";
-import Card from "@/components/secaoapi/card";
+import Card from "@/components/home/secaoapi/card";
 import { useEffect, useState } from "react";
-import SecaoAPI from "@/components/secaoapi";
+import SecaoAPI from "@/components/home/secaoapi";
 
 type ApiProps = {
   id: number,
