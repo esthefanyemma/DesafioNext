@@ -32,7 +32,7 @@ export default function SecaoAPI() {
  
   return (
     <div className="flex flex-col justify-center items-center gap-10">
-      <div className="flex flex-col px-10 gap-10 md:flex-row md:gap-7 lg:px-80">
+      <div className="flex flex-col px-10 gap-10 md:flex-row md:gap-7 lg:px-40">
         {(cards.map((card) => (
           <Card id={card.id} title={card.title} text={card.text} />
         )))}

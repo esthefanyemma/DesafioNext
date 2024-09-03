@@ -18,8 +18,14 @@ export default function Header() {
         setIsOpen(!isOpen);
     };
 
+    const [isOpen2, setIsOpen2] = useState(false);
+
+    const Categ = () => {
+        setIsOpen2(!isOpen2);
+    };
+
     return (
-        <header className=" content-center top-0 z-20 mx-auto w-full h-fit md:p-0 mb-20">
+        <header className=" content-center top-0 z-20 mx-auto w-full h-fit md:p-0 mb-32">
 
             {/* COMPUTADOR  */}
 
@@ -49,12 +55,13 @@ export default function Header() {
                     </div>
 
                     <div className="flex flex-row gap-x-20 content-center md:gap-x-8">
-                        <Link
-                            href="/"
-                            className="md:text-3xl text-2xl text-roxo-claro hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio"
-                        >
-                            CATEGORIAS
+                        <Link href="/" onClick={Categ}>
+                            {isOpen2 ? <h1 className="md:text-3xl text-2xl text-roxo-claro hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio">
+                                CATEGORIAS</h1> :
+                                <h1 className="md:text-3xl text-2xl text-roxo-claro hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio">
+                                    CATEGORIAS</h1>}
                         </Link>
+                        
                         <Link
                             href="/navegar"
                             className="md:text-3xl text-2xl text-roxo-claro hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio"
@@ -62,6 +69,7 @@ export default function Header() {
                             NAVEGAR
                         </Link>
                     </div>
+                    
 
                 </div>
                 <div className="text-white flex flex-row gap-4 pl-8">
@@ -75,7 +83,26 @@ export default function Header() {
                         <CirclePlus className="w-10 h-10 hover:drop-shadow-[0_0_15px_#be78ff]"></CirclePlus>
                     </Link>
                 </div>
+                
             </div>
+            {isOpen2 && (
+                            <div className="bg-roxo-escuro z-20 absolute justify-center h-fit w-full flex flex-row gap-4 px-8">
+                                <div className="flex flex-row gap-8">
+                                <h1 className="text-white font-anybody text-xl">SOBREVIVÊNCIA</h1>
+                                <h1 className="text-white font-anybody text-xl">CARTAS</h1>
+                                <h1 className="text-white font-anybody text-xl">TERROR</h1>
+                                <h1 className="text-white font-anybody text-xl">PUZZEL</h1>
+                                <h1 className="text-white font-anybody text-xl">DESPORTO</h1>
+                                <h1 className="text-white font-anybody text-xl">AÇÃO</h1>
+                                <h1 className="text-white font-anybody text-xl">RPG</h1>
+                                <h1 className="text-white font-anybody text-xl">AVENTURA</h1>
+                                <h1 className="text-white font-anybody text-xl">CORRIDA</h1>
+                                <h1 className="text-white font-anybody text-xl">FPS</h1>
+                                <h1 className="text-white font-anybody text-xl">SIMULADOR</h1>
+                                <h1 className="text-white font-anybody text-xl">CASUAL</h1>
+                                </div>
+                            </div>
+                        )}
 
             {/* CELULAR */}
 
@@ -117,7 +144,7 @@ export default function Header() {
                         <Link href="/gerenciamento" className="text-lg text-white font-antonio bg-roxo-escuro p-3 rounded-md drop-shadow-roxinho2">
                             GERENCIAMENTO
                         </Link>
-                        
+
                     </div>
                 )}
 
