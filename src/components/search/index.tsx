@@ -32,7 +32,7 @@ export default function Search() {
                         id="search"
                         name="search"
                         type="text"
-                        className="focus:outline-none focus:ring-0 shadow-[0_0_30px_rgba(189,120,255,0.5)] border-transparent bg-roxo-escuro w-full rounded-xl pl-16 py-4 text-white"
+                        className="focus:outline-none focus:ring-0 shadow-[0_0_30px_rgba(189,120,255,0.5)] border-transparent hover:bg-roxo-escuro/50 duration-300 bg-roxo-escuro w-full rounded-xl pl-16 py-4 text-white"
                         placeholder="Faça sua busca!"
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />

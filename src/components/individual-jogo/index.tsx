@@ -2,47 +2,40 @@ import Image from "next/image";
 import { Circle, CircleDollarSign, Plane, MapPin, UsersRound } from "lucide-react";
 import { useRouter } from 'next/router';
 
-type GameProp = {id: number; name: string; price: number; image: string; description: string|null; }
+type GameProp = { id: number; name: string; price: number; image: string; description: string | null; }
 type CardProp = {
     game: GameProp;
 }
 
-export default function IndividualJogo({game} : CardProp) {
-    return(
-        <div className="w-full flex-col lg:grid-cols gap-8">
-            <div className="lg:col-span-4">
+export default function IndividualJogo({ game }: CardProp) {
+    return (
+        <div className="w-full bg-white/10 rounded-lg pb-8 flex-col flex md:flex-row md:items-start lg:grid-cols lg:gap-8">
+            <div className="lg:col-span-4 p-8">
                 <Image
-                src={game.image}
-                alt={game.name}
-                width={500}
-                height={500}
-                className="lg:h-[350px] lg:w-[350px] object-cove aspect-vídeo w-full rounded-xl"
+                    src={game.image}
+                    alt={game.name}
+                    width={500}
+                    height={500}
+                    className="max-w-full md:max-w-[200px] lg:max-w-[300px] object-cove aspect-vídeo rounded-xl"
                 />
             </div>
-            <div className="lg:col-span-4 lg:max-h-[700px] 3xl:max-h-max lg:px-4 overflow-auto flex-col gap-8 lg:gap-4">
-                <div className="glex flex-wrap items-center gap-4 justify-between font-semibold text-green-600">
-                    <h1 className="text-2xl md:text-3xl 2xl:text-4xl 3xl:text-5xl line-clamp-2">
-                        {game.name}
-                    </h1>
-                    <div className="flex items-center gap-1">
-                        <Plane className="md:w-7 md:h-7"/>
-                        <span className="text-lg md:text-xl 2xl:text-2xl 3xl:text-3xl">7 dias</span>
+            <div className=" overflow-auto flex flex-col md:pt-10 md:pb-10 lg:col-span-4 lg:max-h-[700px] 3xl:max-h-max lg:px-4 lg:gap-4">
+                <div className="flex flex-col gap-6 justify-between font-semibold text-white">
+                    <div className="flex flex-row justify-center">
+                        <h1 className="text-2xl font-antonio tracking-widest md:text-3xl lg:text-4xl 2xl:text-4xl 3xl:text-5xl line-clamp-2">
+                            {game.name}
+                        </h1>
                     </div>
-                </div>
-                <p className="text-teal-600 text-base 2xl:text-lg 3xl:text-xl text-justify">
-                    {game.description}
-                </p>
-                <div className="space-y-4">
-                    <h1 className="text-xl line-clamp-2 text-red-400 2xl:text-2xl 3xl:text-3xl">
-                        INFORMAÇÕES ADICIONAIS
-                    </h1>
-                    <div className="flex gap-4 font-semibold text-green-400 text-sm">
+                    <div className="flex gap-4 pl-8 font-semibold text-azul text-base">
                         <div className="flex items-center gap-1">
-                            <CircleDollarSign />
-                            <span>{game.price}</span>
+                            <CircleDollarSign className="max-w-full h-5 lg:h-10" />
+                            <span className="lg:text-xl">{game.price}</span>
                         </div>
                     </div>
                 </div>
+                <p className="text-white font-anybody pl-8 text-base lg:text-lg 3xl:text-xl text-justify">
+                    {game.description}
+                </p>
             </div>
         </div>
     )

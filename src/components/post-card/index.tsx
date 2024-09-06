@@ -13,13 +13,13 @@ export default function PostCard({game} : CardProp) {
             href={`/individual/${game.id}`}
             className="w-full lg:w-full px-8 md:px-24 flex group"
         >
-            <div className="bg-roxo-medio drop-shadow-roxinho2 w-full flex flex-col md:flex-row lg:flex-row text-gray-700 shadow-lg rounded-xl group-hover:shadow-2xl duration-300 overflow-hidden">
+            <div className="bg-roxo-medio drop-shadow-roxinho2 w-full flex flex-col md:flex-row lg:flex-row shadow-lg rounded-xl group-hover:bg-roxo-medio/80 duration-300 overflow-hidden">
                 <Image
                     src={game.image || '/public/home/StardewValley.jpg'}
                     alt={game.name}
                     width={500}
                     height={500}
-                    className="max-w-full md:max-w-[100px] lg:max-w-[150px] 2xl:max-w-[250px]"
+                    className="max-w-full md:max-w-[100px] lg:max-w-[150px] lg:h-[230px] 2xl:max-w-[250px]"
                 />
                 <div className="flex flex-col justify-between gap-4 p-6">
                     <div>
@@ -35,7 +35,7 @@ export default function PostCard({game} : CardProp) {
                             </div>
                         </div>
                     </div>
-                    <p className="line-clamp-3 text-base 2xl:text-xl 3xl:text-2xl">
+                    <p className="line-clamp-3 text-base font-anybody text-white 2xl:text-xl 3xl:text-2xl">
                         {game.description}
                     </p>
                 </div>
