@@ -25,7 +25,7 @@ export default function Header() {
     };
 
     return (
-        <header className=" content-center top-0 z-20 mx-auto w-full h-fit md:p-0 mb-32">
+        <header className=" content-center top-0 z-20 mx-auto w-full h-fit md:p-0 mb-24">
 
             {/* COMPUTADOR  */}
 

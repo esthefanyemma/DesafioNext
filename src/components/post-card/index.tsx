@@ -8,10 +8,9 @@ type CardProp = {
 }
 
 export default function PostCard({game} : CardProp) {
-
     return (
         <Link
-            href={'/src/components/individual-jogo'}
+            href={`/individual/${game.id}`}
             className="w-full lg:w-full px-8 md:px-24 flex group"
         >
             <div className="bg-roxo-medio drop-shadow-roxinho2 w-full flex flex-col md:flex-row lg:flex-row text-gray-700 shadow-lg rounded-xl group-hover:shadow-2xl duration-300 overflow-hidden">

@@ -4,10 +4,10 @@ import prisma from "@/lib/db"
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-const itensPerPage = 5;
+const itensPagina = 5;
 
 export async function fetchSearchProduct(query: string, currentPage: number) {
-    const offset = (currentPage - 1) * itensPerPage
+    const offset = (currentPage - 1) * itensPagina
     const product = await prisma.product.findMany({
         where: {
             OR: [{ name: { contains: query, mode: "insensitive" } }]
@@ -15,9 +15,10 @@ export async function fetchSearchProduct(query: string, currentPage: number) {
         orderBy: {
             name: "asc"
         },
-        take: itensPerPage,
-        skip: offset
+        take: itensPagina,
+        // skip: offset
     })
+    console.log(product)
 
     const count = await prisma.product.count({
         where: {
@@ -28,7 +29,7 @@ export async function fetchSearchProduct(query: string, currentPage: number) {
         },
     })
 
-    const totalPages = Math.ceil(count / itensPerPage)
+    const totalPages = Math.ceil(count / itensPagina)
 
     return { product, count, totalPages };
 }

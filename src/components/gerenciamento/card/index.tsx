@@ -6,6 +6,7 @@ import ViewModal from "@/components/gerenciamento/modais/visualizar";
 import EditModal from "@/components/gerenciamento/modais/editar";
 import CriarModal from "@/components/gerenciamento/modais/criar";
 import DeletarModal from "@/components/gerenciamento/modais/deletar"
+import Criar from "@/components/gerenciamento/modais/criar";
 
 type GameProp = {id: number; name: string; price: number; image: string; description: string|null; }
 type CardProp = {

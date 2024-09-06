@@ -5,6 +5,8 @@ import PostCard from "../post-card";
 import SecondarySearch from "./secondary-search";
 import Link from 'next/link';
 import { Product } from "@prisma/client";
+import Paginacao from "../paginacao";
+
 const itensPagina = 5;
 
 type ProductProps = {
@@ -39,6 +41,7 @@ export default function SearchPage({product, totalPages} : ProductProps) {
                     {itensAtuais.map((game, index) => (
                         <PostCard game={game} key={index} />
                     ))}
+                    <Paginacao paginaAtual={paginaAtual} totalPaginas={totalPages} trocarDePagina={trocarDePagina}/>
                 </div>
             )}
         </div>

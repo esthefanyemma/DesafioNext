@@ -19,6 +19,9 @@ export async function fetchProduct() {
     return{product, totalPages};
 };
 
-export async function searchProduct() {
-    
+export async function fetchProductsById(id:number | undefined) {
+    const product = await prisma.product.findUnique({
+        where:{id},
+    })
+    return product;
 }

@@ -12,7 +12,8 @@ async function getProduct({query, currentPage} : ProductProp) {
         const product = response.product;
         const totalPages = response.totalPages;
 
-     return({product, totalPages})
+
+    return({product, totalPages})
     } catch (error) {
         console.error('Erro ao buscar jogo:', error);
         return null
@@ -27,9 +28,6 @@ export default async function Search({
         currentPage: number;
     }
 } ) {
-
-    // const query = searchParams?.query || ''
-    // const currentPage = searchParams?.currentPage || 1
     const product = await getProduct(searchParams)
 
     return(

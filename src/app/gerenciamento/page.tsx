@@ -15,7 +15,7 @@ export default async function Gerenciamento() {
 
     try {
         const response = await fetchProduct();
-        product = response.members;
+        product = response.product;
         totalPages = response.totalPages;
     } catch (error) {
         console.error('Erro ao buscar jogo:', error);
