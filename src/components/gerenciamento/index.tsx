@@ -6,6 +6,7 @@ import { useState } from "react";
 import Paginacao from "@/components/paginacao";
 import Criar from "@/components/gerenciamento/modais/criar";
 import { Product } from "@prisma/client";
+import { Eye } from 'lucide-react';
 
 const itensPagina = 5;
 

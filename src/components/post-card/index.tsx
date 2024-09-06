@@ -19,7 +19,7 @@ export default function PostCard({game} : CardProp) {
                     alt={game.name}
                     width={500}
                     height={500}
-                    className="max-w-full md:max-w-[100px] lg:max-w-[150px] lg:h-[230px] 2xl:max-w-[250px]"
+                    className="max-w-full md:max-w-[100px] lg:max-w-[150px] lg:h-[210px] 2xl:max-w-[250px]"
                 />
                 <div className="flex flex-col justify-between gap-4 p-6">
                     <div>
