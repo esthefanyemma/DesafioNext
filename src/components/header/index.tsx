@@ -63,13 +63,12 @@ export default function Header() {
                         </Link>
                         
                         <Link
-                            href="/navegar"
+                            href="/posts"
                             className="md:text-3xl text-2xl text-roxo-claro hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio"
                         >
-                            NAVEGAR
+                            JOGOS
                         </Link>
                     </div>
-                    
 
                 </div>
                 <div className="text-white flex flex-row gap-4 pl-8">
@@ -83,7 +82,6 @@ export default function Header() {
                         <CirclePlus className="w-10 h-10 hover:drop-shadow-[0_0_15px_#be78ff]"></CirclePlus>
                     </Link>
                 </div>
-                
             </div>
             {isOpen2 && (
                             <div className="bg-roxo-escuro z-20 absolute justify-center h-fit w-full flex flex-row gap-4 px-8">
@@ -106,7 +104,7 @@ export default function Header() {
 
             {/* CELULAR */}
 
-            <div className="lg:hidden flex flex-col gap-2 justify-between items-center w-full pb-8">
+            <div className="lg:hidden flex flex-col gap-2 justify-between items-center w-full pb-0">
                 <div className="bg-gradient-to-b from-roxo-medio to-roxo-escuro flex py-4 px-4 flex-row justify-between w-full items-center">
                     <Link href="/" className="flex gap-2 items-center">
                         <div className="flex items-center gap-2">
@@ -153,10 +151,10 @@ export default function Header() {
                         <Search />
                     </div>
                     <Link
-                        href="/navegar"
+                        href="/posts"
                         className="md:text-3xl bg-roxo-medio rounded-lg p-2 text-lg text-white hover:drop-shadow-[0_0_30px_rgba(189,120,255,1.0)] font-antonio"
                     >
-                        NAVEGAR
+                        JOGOS
                     </Link>
                 </div>
             </div>

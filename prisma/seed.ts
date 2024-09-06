@@ -5,64 +5,46 @@ const prisma = new PrismaClient();
 async function main() {
   const products = [
     {
-      title: 'Wireless Mouse',
-      description: 'A smooth and responsive wireless mouse.',
-      price: 29.99,
-      createdAt: new Date(),
+      name: "BATLEFIELD 4",
+      price: 10.98,
+      image:
+        "https://upload.wikimedia.org/wikipedia/pt/8/84/Battlefield_4_capa.png",
+      description: "Product Description",
     },
     {
-      title: 'Mechanical Keyboard',
-      description: 'A durable mechanical keyboard with RGB lighting.',
-      price: 89.99,
-      createdAt: new Date(),
+      name: "THE SIMS 4",
+      price: 10.98,
+      image:
+        "https://upload.wikimedia.org/wikipedia/pt/3/34/Nova_capa_de_The_Sims_4.png",
+      description: "Product Description",
     },
     {
-      title: 'Noise Cancelling Headphones',
-      description: 'Comfortable headphones with active noise cancelling.',
-      price: 199.99,
-      createdAt: new Date(),
+      name: "HOGWARTS LEGACY",
+      price: 10.98,
+      image:
+        "https://image.api.playstation.com/vulcan/ap/rnd/202208/0921/Ah7Ar9MU0r1BBlzAUflmhyQP.png",
+      description: "Product Description",
     },
     {
-      title: '4K Monitor',
-      description: 'A high-resolution 4K monitor for professional use.',
-      price: 399.99,
-      createdAt: new Date(),
+      name: "HADES",
+      price: 10.98,
+      image:
+        "https://image.api.playstation.com/vulcan/ap/rnd/202104/0517/9AcM3vy5t77zPiJyKHwRfnNT.png",
+      description: "Product Description",
     },
     {
-      title: 'USB-C Hub',
-      description: 'A versatile USB-C hub with multiple ports.',
-      price: 49.99,
-      createdAt: new Date(),
+      name: "HERO SIEGE",
+      price: 10.98,
+      image:
+        "https://images.stopgame.ru/games/logos/17058/c280x280/4lyj9DarccbGh8SyVFRmWQ/hero_siege-square.jpg",
+      description: "Product Description",
     },
     {
-      title: 'Portable SSD',
-      description: 'A fast and portable SSD with 1TB capacity.',
-      price: 129.99,
-      createdAt: new Date(),
-    },
-    {
-      title: 'Bluetooth Speaker',
-      description: 'A compact Bluetooth speaker with excellent sound quality.',
-      price: 59.99,
-      createdAt: new Date(),
-    },
-    {
-      title: 'Smartwatch',
-      description: 'A stylish smartwatch with fitness tracking features.',
-      price: 149.99,
-      createdAt: new Date(),
-    },
-    {
-      title: 'Gaming Chair',
-      description: 'An ergonomic gaming chair with lumbar support.',
-      price: 249.99,
-      createdAt: new Date(),
-    },
-    {
-      title: 'Webcam',
-      description: 'A high-definition webcam for video conferencing.',
-      price: 79.99,
-      createdAt: new Date(),
+      name: "A HAT IN TIME",
+      price: 10.98,
+      image:
+        "https://upload.wikimedia.org/wikipedia/en/2/2a/A_Hat_in_Time_cover_art.png",
+      description: "Product Description",
     },
   ];
 
