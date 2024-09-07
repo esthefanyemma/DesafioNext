@@ -1,4 +1,17 @@
-export default function Deletar() {
+type GameProp = {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+    description: string | null;
+}
+
+type DeletarProps = {
+    game: GameProp;
+}
+
+export default function Deletar({game}: DeletarProps) {
+    if (!game) return null;
     return(
         <div className="flex flex-col drop-shadow-roxinho2 absolute rounded-xl bg-roxo-medio w-3/4 gap-4 z-40 p-8 items-center md:w-3/5">
             <h1 className="text-white text-xl font-anton text-center drop-shadow-roxinho md:text-3xl lg:text-5xl">DELETAR</h1>

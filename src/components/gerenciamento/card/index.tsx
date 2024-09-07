@@ -7,33 +7,14 @@ import Editar from "@/components/gerenciamento/modais/editar";
 import Deletar from "@/components/gerenciamento/modais/deletar";
 
 type GameProp = { id: number; name: string; price: number; image: string; description: string | null; }
-type CardProp = { game: GameProp; }
+type CardProp = { game: GameProp;  openModal: (type: 'view' | 'edit' | 'delete', game: GameProp) => void;}
 
 type ModalType = 'view' | 'edit' | 'delete' | null;
 
-export default function Card({ game }: CardProp) {
-    const [openModal, setOpenModal] = useState<ModalType>(null);
-
-    const toggleModal = (type: ModalType) => () => {
-        setOpenModal(openModal === type ? null : type);
-    };
-
-    const ModalComponent = () => {
-        switch (openModal) {
-            case 'view':
-                return <Visualizar />;
-            case 'edit':
-                return <Editar />;
-            case 'delete':
-                return <Deletar />;
-            default:
-                return null;
-        }
-    };
-
-    const ActionButton = ({ type, Icon }: { type: ModalType, Icon: any }) => (
+export default function Card({ game, openModal }: CardProp) {
+    const ActionButton = ({ type, Icon }: { type: 'view' | 'edit' | 'delete', Icon: any }) => (
         <button
-            onClick={toggleModal(type)}
+            onClick={() => openModal(type, game)}
             className="bg-roxo-claro/20 hover:bg-roxo-claro/40 duration-300 rounded-lg py-1 md:py-2 md:w-1/3 md:rounded-xl lg:rounded-2xl"
         >
             <Icon className="text-white w-full h-4 md:h-6 lg:h-8" />
@@ -55,13 +36,6 @@ export default function Card({ game }: CardProp) {
                 <ActionButton type="edit" Icon={Pencil} />
                 <ActionButton type="delete" Icon={Trash2} />
             </div>
-            {openModal && (
-                <div className="inset-0 absolute flex items-center justify-center z-50 bg-black bg-opacity-50">
-                    <div className="bg-white p-4 rounded-lg flex justify-center items-center z-50">
-                        <ModalComponent />
-                    </div>
-                </div>
-            )}
         </div>
     );
 }

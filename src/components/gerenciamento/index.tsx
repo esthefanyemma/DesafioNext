@@ -7,6 +7,9 @@ import Paginacao from "@/components/paginacao";
 import Criar from "@/components/gerenciamento/modais/criar";
 import { Product } from "@prisma/client";
 import { Eye } from 'lucide-react';
+import Visualizar from "./modais/visualizar";
+import Editar from "./modais/editar";
+import Deletar from "./modais/deletar";
 
 const itensPagina = 5;
 
@@ -15,11 +18,42 @@ type ProductProps = {
     totalPaginas: number
 }
 
+type ModalType = 'view' | 'edit' | 'delete' | null;
+
+type GameProp = { id: number; name: string; price: number; image: string; description: string | null }
+
 export default function Gerenciar({product, totalPaginas} : ProductProps) {
-const [paginaAtual, setpaginaAtual] = useState(1);
+    const [paginaAtual, setpaginaAtual] = useState(1);
+    const [openModal, setOpenModal] = useState<ModalType>(null);
+
+    const openModalHandler = (type: ModalType, game: GameProp) => {
+        setOpenModal(type);
+        setSelectedGame(game);
+    };
+
+    const closeModalHandler = () => {
+        setOpenModal(null);
+        setSelectedGame(null);
+    };
+
+    const ModalComponent = () => {
+        switch (openModal) {
+            case 'view':
+                return <Visualizar game={selectedGame} />;
+            case 'edit':
+                return <Editar game={selectedGame} />;
+            case 'delete':
+                return <Deletar game={selectedGame} />;
+            default:
+                return null;
+        }
+    };
+    const [selectedGame, setSelectedGame] = useState<GameProp | null>(null);
+
     const trocarDePagina =  (page : number) => {
         setpaginaAtual(page);
     };
+
     const indexInicial = (paginaAtual - 1) * itensPagina;
     const itensAtuais = product.slice(indexInicial, indexInicial + itensPagina);
     return (
@@ -30,10 +64,21 @@ const [paginaAtual, setpaginaAtual] = useState(1);
             </div>
             <div className="flex flex-wrap gap-8 justify-center px-10 md:px-14 lg:px-40 xl:gap-20">
             {itensAtuais.map((game, index) => (
-                <Card game={game} key={index}/>
-            ))}
+                    <Card
+                        game={game}
+                        key={index}
+                        openModal={openModalHandler}
+                    />
+                ))}
             </div>
             <Paginacao paginaAtual={paginaAtual} totalPaginas={totalPaginas} trocarDePagina={trocarDePagina}/>
+            {openModal && selectedGame && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm">
+                    <div className="bg-white p-4 rounded-lg z-60 flex items-center justify-center">
+                        <ModalComponent />
+                    </div>
+                </div>
+            )}
         </main>
     )
 }
