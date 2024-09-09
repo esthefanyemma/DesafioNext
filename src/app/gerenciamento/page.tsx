@@ -7,7 +7,7 @@ import Paginacao from "@/components/paginacao";
 import Criar from "@/components/gerenciamento/modais/criar";
 import Gerenciar from "@/components/gerenciamento";
 import { Product } from "@prisma/client";
-import { fetchProduct } from "../back/actions";
+import { fetchProduct } from "../../app/back/actions";
 
 export default async function Gerenciamento() {
     let product: Product[] = [];
