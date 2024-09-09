@@ -18,13 +18,14 @@ type ProductProps = {
     totalPaginas: number
 }
 
-type ModalType = 'view' | 'edit' | 'delete' | null;
+type ModalType = 'view' | 'edit' | 'delete' | 'create' | null;
 
 type GameProp = { id: number; name: string; price: number; image: string; description: string | null }
 
 export default function Gerenciar({product, totalPaginas} : ProductProps) {
     const [paginaAtual, setpaginaAtual] = useState(1);
     const [openModal, setOpenModal] = useState<ModalType>(null);
+    const [selectedGame, setSelectedGame] = useState<GameProp | null>(null);
 
     const openModalHandler = (type: ModalType, game: GameProp) => {
         setOpenModal(type);
@@ -39,16 +40,17 @@ export default function Gerenciar({product, totalPaginas} : ProductProps) {
     const ModalComponent = () => {
         switch (openModal) {
             case 'view':
-                return <Visualizar game={selectedGame} />;
+                return <Visualizar game={selectedGame} onClose={closeModalHandler}/>;
             case 'edit':
-                return <Editar game={selectedGame} />;
+                return <Editar game={selectedGame} onClose={closeModalHandler}/>;
             case 'delete':
-                return <Deletar game={selectedGame} />;
+                return <Deletar game={selectedGame} onClose={closeModalHandler}/>;
+            case 'create':
+                    return <Criar onClose={closeModalHandler} />;
             default:
                 return null;
         }
     };
-    const [selectedGame, setSelectedGame] = useState<GameProp | null>(null);
 
     const trocarDePagina =  (page : number) => {
         setpaginaAtual(page);
@@ -59,7 +61,8 @@ export default function Gerenciar({product, totalPaginas} : ProductProps) {
     return (
         <main className="flex flex-col items-center gap-10 xl:gap-16">
             <div className="flex flex-col gap-4 md:gap-8 items-center">
-                <button className="bg-azul w-fit p-4 rounded-xl font-anybody text-base font-semibold text-white xl:rounded-2xl xl:text-2xl">Novo Jogo</button>
+                <button onClick={() => openModalHandler('create', null)}
+                 className="bg-azul w-fit p-4 rounded-xl font-anybody text-base font-semibold text-white xl:rounded-2xl xl:text-2xl">Novo Jogo</button>
                 <h1 className="text-white text-xl font-anton text-center drop-shadow-roxinho md:text-3xl lg:text-5xl">GERENCIAMENTO</h1>
             </div>
             <div className="flex flex-wrap gap-8 justify-center px-10 md:px-14 lg:px-40 xl:gap-20">
@@ -72,13 +75,14 @@ export default function Gerenciar({product, totalPaginas} : ProductProps) {
                 ))}
             </div>
             <Paginacao paginaAtual={paginaAtual} totalPaginas={totalPaginas} trocarDePagina={trocarDePagina}/>
-            {openModal && selectedGame && (
+            {openModal && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-sm">
                     <div className="bg-white p-4 rounded-lg z-60 flex items-center justify-center">
                         <ModalComponent />
                     </div>
                 </div>
             )}
+            
         </main>
     )
 }

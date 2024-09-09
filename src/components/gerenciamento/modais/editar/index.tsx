@@ -8,9 +8,10 @@ type GameProp = {
 
 type EditarProps = {
     game: GameProp;
+    onClose: () => void;
 }
 
-export default function Editar({game}: EditarProps) {
+export default function Editar({game, onClose}: EditarProps) {
     if (!game) return null;
     return(
         <div className="flex justify-center flex-col drop-shadow-roxinho2 absolute rounded-xl bg-roxo-medio w-3/4 gap-4 z-40 p-8 items-center md:w-3/5">
@@ -20,7 +21,7 @@ export default function Editar({game}: EditarProps) {
                 <textarea name="descricao" id="descricao" placeholder="Descrição" className="outline-none pl-2 bg-white rounded-md md:py-2"></textarea>
                 <input type="number" name="preco" id="preco" placeholder="Preço" className="outline-none bg-white p-2 rounded-md md:py-4"/>
             </form>
-            <button className="bg-roxo-claro p-2 font-anybody font-bold text-sm text-white rounded-xl md:text-xl">SALVAR</button>
+            <button onClick={onClose} className="bg-roxo-claro p-2 font-anybody font-bold text-sm text-white rounded-xl md:text-xl">SALVAR</button>
         </div>
     )
 }
