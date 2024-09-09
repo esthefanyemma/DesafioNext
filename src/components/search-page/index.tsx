@@ -18,15 +18,18 @@ export default function SearchPage({product, totalPages} : ProductProps) {
     const [paginaAtual, setpaginaAtual] = useState(1);
     const trocarDePagina =  (page : number) => {
         setpaginaAtual(page);
-    };
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+    });    };
     const indexInicial = (paginaAtual - 1) * itensPagina;
     const itensAtuais = product.slice(indexInicial, indexInicial + itensPagina);
 
-    const count = 0;
+    const count = product.length;
     return (
         <div className="w-full">
             <SecondarySearch count={count} />
-            {count != 0 ? (
+            {count == 0 ? (
                 <div className="w-full flex flex-col">
                     <span className="text-2xl font-anybody text-white">
                         Nenhuma publicação encontrada.

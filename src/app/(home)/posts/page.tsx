@@ -1,6 +1,6 @@
 
 import PostPage from "@/components/posts-page";
-import { fetchProduct } from "../back/actions";
+import { fetchProduct } from "../../back/admin/actions";
 import { Product } from "@prisma/client";
 
 async function getProduct() {

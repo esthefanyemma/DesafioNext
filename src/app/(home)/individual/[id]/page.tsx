@@ -1,4 +1,4 @@
-import { fetchProductsById } from "@/app/back/actions";
+import { fetchProductsById } from "@/app/back/admin/actions";
 import IndividualJogo from "@/components/individual-jogo";
 import { Product } from '@prisma/client';
 

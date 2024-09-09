@@ -1,3 +1,5 @@
+import { deleteGame } from "@/app/back/admin/actions";
+
 type GameProp = {
     id: number;
     name: string;
@@ -11,6 +13,11 @@ type DeletarProps = {
     onClose: () => void;
 }
 
+function deleteGamee(id: number, onClose: () => void) {
+    deleteGame(id);
+    onClose();
+}
+
 export default function Deletar({game, onClose}: DeletarProps) {
     if (!game) return null;
     return(
@@ -19,7 +26,7 @@ export default function Deletar({game, onClose}: DeletarProps) {
             <form action="" className="flex flex-col w-full gap-3 md:gap-6">
                 <h1 className="outline-none p-2 bg-white/10 rounded-md md:py-4 font-anybody text-white font-bold lg:text-2xl text-center">Certeza que deseja Deletar?</h1>
             </form>
-            <button onClick={onClose} className="bg-roxo-claro p-2 font-anybody font-bold text-sm text-white rounded-xl md:text-xl">DELETAR</button>
+            <button onClick={() => deleteGamee(game.id, onClose)} className="bg-roxo-claro p-2 font-anybody font-bold text-sm text-white rounded-xl md:text-xl">DELETAR</button>
         </div>
     )
 }

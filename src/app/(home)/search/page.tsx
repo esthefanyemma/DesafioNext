@@ -1,5 +1,5 @@
 import SearchPage from "@/components/search-page";
-import { fetchSearchProduct } from "../back/search/actions";
+import { fetchSearchProduct } from "../../back/search/actions";
 
 type ProductProp = {
     query: string

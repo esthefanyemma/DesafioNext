@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/app/globals.css";
 import Header from "@/components/header";
 import Search from "@/components/search";
 import Footer from "@/components/footer";
@@ -17,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className= "bg-roxo-escuro">
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

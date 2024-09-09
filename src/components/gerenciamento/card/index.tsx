@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Visualizar from "@/components/gerenciamento/modais/visualizar";
 import Editar from "@/components/gerenciamento/modais/editar";
 import Deletar from "@/components/gerenciamento/modais/deletar";
+import Link from "next/link";
 
 type GameProp = { id: number; name: string; price: number; image: string; description: string | null; }
 type CardProp = { game: GameProp;  openModal: (type: 'view' | 'edit' | 'delete', game: GameProp) => void;}
@@ -32,7 +33,9 @@ export default function Card({ game, openModal }: CardProp) {
             />
             <h1 className="text-white w-1/3 font-anybody text-center text-xs p-2 md:text-lg lg:text-2xl xl:text-3xl">{game.name}</h1>
             <div className="flex flex-col w-1/6 pr-4 gap-1 md:flex-row">
-                <ActionButton type="view" Icon={Eye} />
+                <Link className="bg-roxo-claro/20 hover:bg-roxo-claro/40 duration-300 rounded-lg py-1 md:py-2 md:w-1/3 md:rounded-xl lg:rounded-2xlcontain" href={`/individual/${game.id}`}>
+                    <Eye className="text-white w-full h-4 md:h-6 lg:h-8" />
+                </Link>
                 <ActionButton type="edit" Icon={Pencil} />
                 <ActionButton type="delete" Icon={Trash2} />
             </div>

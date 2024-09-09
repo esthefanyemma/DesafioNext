@@ -15,8 +15,6 @@ export async function fetchSearchProduct(query: string, currentPage: number) {
         orderBy: {
             name: "asc"
         },
-        take: itensPagina,
-        // skip: offset
     })
     console.log(product)
 
