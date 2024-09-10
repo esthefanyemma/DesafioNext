@@ -1,9 +1,9 @@
 'use client'
 
 import { Product } from "@prisma/client";
-import PostCard from "../post-card";
 import { useState } from "react";
 import Paginacao from "../paginacao";
+import PostCard from "../post-card";
 
 const itensPagina = 5;
 

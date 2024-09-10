@@ -130,7 +130,7 @@ export default function Header() {
 
                 {isOpen && (
                     <div className="bg-roxo-escuro w-full flex flex-col gap-4 pt-4 pb-20 px-8">
-                        <Link href="/" className="text-lg text-white font-antonio bg-roxo-escuro p-3 rounded-md drop-shadow-roxinho2">
+                        <Link href="/categoriascel" className="text-lg text-white font-antonio bg-roxo-escuro p-3 rounded-md drop-shadow-roxinho2">
                             CATEGORIAS
                         </Link>
                         <Link href="/login" className="text-lg text-white font-antonio bg-roxo-escuro p-3 rounded-md drop-shadow-roxinho2">
